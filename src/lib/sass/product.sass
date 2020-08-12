@@ -1,0 +1,510 @@
+*
+	position: relative
+body
+	.product
+		margin: auto
+		width: 80%
+		display: flex
+		flex-wrap: wrap
+		.productAll
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
+			align-content: center
+			h2
+				flex-shrink: 0
+				width: 100%
+				font-size: 32px
+				padding-top: 30px
+				text-align: center
+				color: #444
+				margin-bottom: 60px
+			.productImgs
+				display: block
+				width: 50%
+				// z-index: 10
+				img
+					width: 100%
+				.lightboxDiv
+					position: fixed
+					top: 0px
+					left: 0px
+					width: 100%
+					height: 100%
+					background-color: rgba(#000,0.9)
+					display: flex
+					align-items: center
+					justify-content: center
+					z-index: -30
+					// display: none
+					opacity: 0
+					img
+						margin: auto
+						// width: 80%
+						width: auto
+						// height: auto
+						max-width: 80%
+						max-height: 80%
+					.lightBoxImg
+						border: solid 1px white
+					.lightImgNone
+						animation: lightBoxNone 0.3s forwards normal
+					.lightImgBlock
+						animation: lightBoxBlock 0.3s forwards normal
+					.lightLoading
+						position: absolute
+						width: 80%
+						height: 80%
+						display: flex
+						justify-content: center
+						align-items: center
+						opacity: 0
+						z-index: -1
+						background-color: white
+						transition: width 0.3s ease-in-out,height 0.3s ease-in-out
+						img
+							width: 30px
+							height: 30px
+					.lightLoadingBlock
+						opacity: 1
+						z-index: 30
+						display: flex
+					.lightLoadingNone
+						animation: lightLoadingNone 0.5s forwards normal
+					.button
+						cursor: pointer
+						width: 80px
+						height: 80px
+						position: absolute
+						// left: 20px
+						z-index: 1
+						opacity: 0.5
+						transition: opacity 0.3s ease-in-out
+						&:hover
+							opacity: 1
+					.buttonLeft
+						left: 20px
+					.buttonRight
+						right: 20px
+					.buttonNone
+						display: none
+					.buttonAll
+						position: absolute
+						left: 0px
+						top: 0px
+						width: 100%
+						height: 100%
+						max-height: 100vh
+						max-width: 100vw
+						z-index: -1
+				.lightBoxBlock
+					animation: lightBoxBlock 0.5s forwards normal
+				.lightBoxNone
+					animation: lightBoxNone 0.5s forwards normal
+				.nowWatchProducts
+					cursor: zoom-in
+					// overflow: hidden
+					.watchBigProducts
+						background-color: white
+						// z-index: 99
+						overflow: hidden
+						opacity: 0
+						z-index: -1
+						position: absolute
+						top: 0px
+						img
+							width: 200%
+			.notNowColor
+				display: none
+			.listProducts
+				width: 100%
+				left: 50%
+				transform: translateX(-50%)
+				display: flex
+				justify-content: center
+				// justify-content: space-around
+				overflow-x: scroll
+				&::-webkit-scrollbar
+					display: none
+				.liProduct
+					cursor: pointer
+					flex-shrink: 0
+					flex-grow: 0
+					opacity: 0.6
+					width: 13%
+					margin: 10px
+					// padding: 10px
+					transition: opacity 0.1s ease-in-out
+					transform: translateZ(0)
+					&:hover
+						opacity: 1
+					img
+						width: 100%
+				.liProductHover
+					opacity: 1
+			.format
+				width: 40%
+				padding: 10px
+				z-index: 9
+				display: flex
+				align-content: center
+				div
+					display: flex
+					flex-wrap: wrap
+					align-content: center
+					h4
+						margin: 0px
+						padding: 0px
+						text-align: left
+						margin-left: 30px
+						margin-bottom: 40px
+						font-size: 1.5rem
+						color: #666
+					.colorAll
+						display: flex
+						align-items: center
+						.colorLi 
+							cursor: pointer
+						div
+							display: inline-block
+							width: 20px
+							height: 20px
+							background-position: center
+							-webkit-background-size: 100%
+							-moz-background-size: 100%
+							background-size: 100%
+							background-repeat: no-repeat
+							border-radius: 50%
+							margin-left: 20px
+							top: 50%
+							&:nth-child(2)
+								margin-left: 0px
+					.liTwo
+						span
+							// opacity: 0
+							padding-top: 1px
+							height: 1px
+							overflow-y: hidden
+					li
+						flex-grow: 0
+						flex-shrink: 0
+						width: 100%
+						list-style: none
+						position: relative
+						font-size: 16px
+						margin: 10px 15px
+						white-space: nowrap
+						padding-left: 15px
+						color: #888
+						span
+							display: inline-block
+							width: 80px
+						p
+							margin-bottom: 0px
+			.LivePhoto
+				width: 100%
+				img
+					width: 100%
+					margin: 20px 0px 
+
+@keyframes lightBoxBlock
+	0%
+		// position: fixed
+		display: none
+		z-index: 30
+		opacity: 0
+	100%
+		opacity: 1
+		z-index: 30
+		display: flex
+@keyframes lightBoxNone
+	0%
+		display: flex
+		z-index: 30
+		opacity: 1
+	100%
+		display: none
+		opacity: 0
+		z-index: -1
+@keyframes lightLoadingNone
+	0%
+		display: flex
+		z-index: 30
+		opacity: 1
+	100%
+		display: none
+		opacity: 0
+		z-index: -1
+
+@media screen and (max-width: 1120px)
+	body
+		.product
+			.productAll
+				h2
+				.productImgs
+					img
+					.lightboxDiv
+						img
+						.button
+						.buttonLeft
+						.buttonRight
+				.listProducts
+					.liProduct
+						img
+				.format
+					div
+						h4
+						.colorAll
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							span
+							p
+				.LivePhoto
+					img
+@media screen and (max-width: 1120px)
+	body
+		.product
+			.productAll
+				.productImgs
+					width: 60%
+					img
+					.lightboxDiv
+						img
+						.button
+							width: 100px
+							height: 100px
+							padding: 20px
+							img
+								width: 100%
+						.buttonLeft
+							left: 0px
+						.buttonRight
+							right: 0px
+				.listProducts
+					width: 120%
+					.liProduct
+						margin: 10px 5px
+						width: 13%
+						img
+				.format
+					div
+						h4
+						.colorAll
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							margin: 8px 15px
+
+@media screen and (max-width: 850px)
+	body
+		.product
+			.productAll
+				h2
+				.productImgs
+					width: 80%
+					img
+					.lightboxDiv
+						img
+						.button
+							// width: 0px
+							// height: 0px
+							padding: 20px
+						.buttonLeft
+							left: -10px
+						.buttonRight
+							right: -10px
+				.listProducts
+					margin: 40px 0px
+					width: 120%
+					.liProduct
+						img
+				.format
+					width: 60%
+					div
+						justify-content: center
+						h4
+							width: 51%
+							margin: 0px
+							margin-bottom: 80px
+							line-height: 40px
+						.colorAll
+							position: absolute
+							top: 80px
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							margin-left: 0px
+							padding: 0px
+							width: 51%
+							span
+							p
+				.LivePhoto
+					img
+@media screen and (max-width: 650px)
+	body
+		.product
+			.productAll
+				h2
+					font-size: 26px
+				.productImgs
+					width: 85%
+					img
+					.lightboxDiv
+						img
+						.button
+							width: 80px
+							height: 80px
+							img
+						.buttonLeft
+						.buttonRight
+				.listProducts
+					margin: 20px 0px
+					justify-content: flex-start
+					.liProduct
+						width: 20%
+						margin: 0px 1.5%
+						img
+				.format
+					div
+						justify-content: flex-start
+						h4
+							width: 100%
+							text-align: center
+						.colorAll
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							width: 100%
+							span
+							p
+				.LivePhoto
+					img
+@media screen and (max-width: 500px)
+	body
+		.product
+			width: 90%
+			.productAll
+				h2
+					font-size: 24px
+					padding-top: 20px
+					margin-bottom: 30px
+				.productImgs
+					width: 90%
+					img
+					.lightboxDiv
+						img
+						.button
+						.buttonLeft
+							left: -20px
+						.buttonRight
+							right: -20px
+				.listProducts
+					margin: 20px 0px
+					justify-content: flex-start
+					width: 100%
+					.liProduct
+						width: 20%
+						margin: 0px 4.2%
+						img
+				.format
+					div
+						justify-content: flex-start
+						h4
+							margin-top: 20px
+							width: 100%
+						.colorAll
+							top: 100px
+							div
+								width: 15px
+								height: 15px
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							font-size: 14px
+							span
+							p
+				.LivePhoto
+					img
+@media screen and (max-width: 420px)
+	body
+		.product
+			.productAll
+				h2
+				.productImgs
+					img
+					.lightboxDiv
+						img
+						.button
+							width: 70px
+							height: 70px
+						.buttonLeft
+						.buttonRight
+				.listProducts
+					.liProduct
+						width: 25%
+						margin: 0px 1.8%
+						img
+				.format
+					width: 80%
+					div
+						justify-content: flex-start
+						h4
+							margin-top: 20px
+							width: 100%
+							margin-bottom: 60px
+						.colorAll
+							top: 80px
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							span
+							p
+				.LivePhoto
+					img
+@media screen and (max-width: 350px)
+	body
+		.product
+			.productAll
+				h2
+				.productImgs
+					img
+					.lightboxDiv
+						img
+						.button
+						.buttonLeft
+						.buttonRight
+				.listProducts
+					.liProduct
+						img
+				.format
+					width: 90%
+					div
+						justify-content: flex-start
+						h4
+							margin-top: 20px
+							width: 100%
+							margin-bottom: 60px
+						.colorAll
+							top: 80px
+							div
+								&:nth-child(2)
+						.liTwo
+							span
+						li
+							span
+							p
+				.LivePhoto
+					img

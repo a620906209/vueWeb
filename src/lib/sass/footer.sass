@@ -1,0 +1,60 @@
+
+body,html
+  .footer
+    // position: absolute
+    // bottom: 0px
+    background-color: #eee
+    display: block
+    padding: 20px
+    // height: 180px
+    display: flex
+    .leftLogo
+      width: 120px
+      position: relative
+      background-image: url('./assets/logo_black.svg')
+      background-size: 100% auto
+      background-repeat: no-repeat
+      background-position: center
+    .rightText
+      margin-left: 25px
+      font-size: 18px
+@media screen and (max-width: 991px)
+  body,html
+    .footer
+      padding: 15px
+      .leftLogo
+        // width: 100px
+        img
+      .rightText
+        margin-left: 20px
+        font-size: 18px
+@media screen and (max-width: 770px)
+  body,html
+    .footer
+      padding: 10px
+      .leftLogo
+        width: 150px
+        img
+      .rightText
+        text-align: center
+        margin-left: 10px
+        font-size: 15px
+        br
+@media screen and (max-width: 580px)
+  body,html
+    .footer
+      padding: 10px
+      .leftLogo
+        img
+      .rightText
+        font-size: 14px
+@media screen and (max-width: 438px)
+  body,html
+    .footer
+      padding: 5px
+      .leftLogo
+        width: 180px
+        img
+      .rightText
+        margin-left: 5px
+        font-size: 12px

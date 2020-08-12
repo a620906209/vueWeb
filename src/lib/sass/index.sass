@@ -1,0 +1,183 @@
+*
+  position: relative
+  .newsList
+    padding: 70px 0px
+    .RWDText
+      display: none
+    .newsContent
+      display: flex
+      justify-content: space-around
+      .newsItem
+        flex-shrink: 0
+        overflow: hidden
+        width: 32%
+        &::after
+          content: ""
+          display: block
+          width: 100%
+          height: 100%
+          background-color: rgba(black,0.8)
+          position: absolute
+          // left: 0px
+          left: 50%
+          transform: translateX(-50%)
+          top: 0px
+          width: 0px
+        &:hover
+          .caption
+            animation: newsLightText 1.2s forwards normal 
+          &::after
+            animation: newsLight 0.7s forwards normal
+        img
+          width: 100%
+        .newsContentA
+          height: 100%
+        .caption
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%,-50%)
+          font-size: 24px
+          // width: 100%
+          text-align: center
+          color: #eee
+          z-index: 10
+          width: 100%
+          opacity: 0
+  .content
+    margin-top: -1rem
+    .bv-example-row
+      img
+        width: 100%
+    .bv-example-row
+      margin: 40px 0px 60px
+      .in_product_all
+        overflow-x: hidden
+        padding: 0px 60px
+        flex-wrap: nowrap
+        a
+          color: #333
+          text-decoration: none
+        .indexProduct
+          transition: left 0.3s ease-in-out
+        .product_btn
+          position: absolute
+          height: 100%
+          width: 30px
+          z-index: 999
+          cursor: pointer
+          &:after
+            position: absolute
+            z-index: -1
+            display: inline-block
+            content: ''
+            width: 90px
+            height: 100%
+            background-color: white
+          &:before
+            position: absolute
+            content: ''
+            z-index: -1
+            height: 100%
+            width: 30px
+            display: inline-block
+            background-color: green
+          &:hover
+            img
+              opacity: 1
+          img
+            top: 50%
+            transform: translateY(-50%)
+            opacity: 0.5
+        .left_btn
+          display: none
+          left: 30px
+          &:after
+            left: -30px
+        .right_btn
+          right: 30px
+          &:after
+            right: -30px
+            background-color: white
+@keyframes newsLight
+  0%
+    width: 0px
+  100%
+    width: 100%
+    opacity: 1
+
+@keyframes newsLightText
+  0%
+    display: none
+    opacity: 0
+  100%
+    display: block
+    opacity: 1
+@media screen and (max-width: 991px)
+  *
+    .newsList
+      .RWDText
+        display: block
+        font-size: 28px
+        margin-top: -20px
+        text-align: center
+      .newsContent
+        flex-wrap: wrap
+        .newsItem
+          margin: 10px 0px
+          width: 70%
+@media screen and (max-width: 750px)
+  .content
+    .newsList
+      .newsContent
+        .newsItem
+          width: 85%
+    .bv-example-row
+      margin: 0px 0px 60px
+@media screen and (max-width: 580px)
+  .content
+    .newsList
+      padding: 40px 0px
+      .RWDText
+        font-size: 20px
+        margin: 0px
+      .newsContent
+        .newsItem
+          width: 95%
+    .bv-example-row
+      margin-bottom: 20px
+      img
+        width: 100%
+      .in_product_all
+        padding: 0px 40px
+        a
+        .product_btn
+          width: 30px
+          img
+        .left_btn
+          left: 15px
+        .right_btn
+          right: 15px
+          &:after
+@media screen and (max-width: 540px)
+  *
+    .newsList
+      margin-top: -10px
+      .newsContent
+        .newsItem
+          width: 95%
+@media screen and (max-width: 460px)
+  *
+    .newsList
+      .RWDText
+        font-size: 18px
+      .newsContent
+        .newsItem
+          width: 95%
+    .content
+      .bv-example-row
+        margin-bottom: 10px
+        .in_product_all
+          a
+          .product_btn
+            width: 20px
